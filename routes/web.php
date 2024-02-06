@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GptRequestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('form');
 });
+Route::post('/request', [GptRequestController::class, 'sendRequest'])->name("request");
